@@ -59,3 +59,35 @@ GraphQL 関連の設定をします。
 
 - `nest-cli.json`の`plugins`に`@nestjs/graphql`を追加します。これによって、entity とかに追加するデコレータをシンプルにできます。
 - `app.module.ts`に`GraphQLModule`を追加します。その際に、`autoSchemaFile`を追加して、自動で gql ファイルが作成されるようにします。
+
+users の Controller, Service, Entity などをざっくり作ります。
+
+- 上記の際に、UsersService で PrismaService を使いますが、それを簡単に扱える`nestjs-prisma`を追加しておきます。
+
+```shell
+npm i nestjs-prisma
+```
+
+- また、`UsersModule`の`imports`に`PrismaModule`を追加しておく必要があります。
+
+```ts
+// src/users/users.module.ts
+
+...
+import { PrismaModule } from "nestjs-prisma";
+
+@Module({
+  imports: [PrismaModule],
+  providers: [UsersResolver, UsersService],
+})
+...
+```
+
+起動して GraphQL プレイグラウンドを見てみましょう。
+
+```shell
+npm run start:dev
+```
+
+エラーがなければ、起動すると勝手に、`src/schema.gql`が作成されます。
+`http://localhost:3045/graphql`にアクセスすると、GraphQL プレイグラウンドが確認できます。port はデフォルトは 3000 です。
