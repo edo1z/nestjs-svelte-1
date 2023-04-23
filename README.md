@@ -90,4 +90,39 @@ npm run start:dev
 ```
 
 エラーがなければ、起動すると勝手に、`src/schema.gql`が作成されます。
-`http://localhost:3045/graphql`にアクセスすると、GraphQL プレイグラウンドが確認できます。port はデフォルトは 3000 です。
+`http://localhost:3045/graphql`にアクセスすると、GraphQL プレイグラウンドが確認できます。（port はデフォルトは 3000 です。）
+
+下記でユーザを作成できます。
+
+```gql
+mutation CreateUser($createUserInput: CreateUserInput!) {
+  createUser(createUserInput: $createUserInput) {
+    id
+    username
+    email
+    createdat
+  }
+}
+```
+
+```gql
+// Query Variables
+{
+  "createUserInput": {
+    "username": "hoge taro",
+    "email": "hoge.taro@example.com"
+  }
+}
+```
+
+下記で全ユーザ取得できます。
+
+```gql
+query GetAllUsers {
+  users {
+    id
+    username
+    email
+  }
+}
+```

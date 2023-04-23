@@ -9,6 +9,6 @@ export class User {
   bio?: string;
   avatar?: string;
   active: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdat: Date;
+  updatedat: Date;
 }

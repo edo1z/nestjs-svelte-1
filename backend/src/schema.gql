@@ -9,8 +9,8 @@ type User {
   bio: String
   avatar: String
   active: Boolean!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdat: DateTime!
+  updatedat: DateTime!
 }
 
 """
