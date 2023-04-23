@@ -48,3 +48,14 @@ users リソース作成します。
 ```shell
 nest g resource users
 ```
+
+GrahpQL を入れます。
+
+```shell
+npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
+```
+
+GraphQL 関連の設定をします。
+
+- `nest-cli.json`の`plugins`に`@nestjs/graphql`を追加します。これによって、entity とかに追加するデコレータをシンプルにできます。
+- `app.module.ts`に`GraphQLModule`を追加します。その際に、`autoSchemaFile`を追加して、自動で gql ファイルが作成されるようにします。
