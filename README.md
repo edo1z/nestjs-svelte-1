@@ -13,6 +13,8 @@ nest new backend
 npm create skeleton-app@latest frontend
 ```
 
+### Backend の設定・開発
+
 バックエンドを設定しましょう。
 
 ```shell
@@ -105,8 +107,9 @@ mutation CreateUser($createUserInput: CreateUserInput!) {
 }
 ```
 
+Query Variables
+
 ```gql
-// Query Variables
 {
   "createUserInput": {
     "username": "hoge taro",
@@ -126,3 +129,7 @@ query GetAllUsers {
   }
 }
 ```
+
+## Frontend の設定・開発
+
+SvelteKit でサイトのレイアウトと、アカウント作成・ログイン画面とかを作りつつ、GraphQL で Backend にリクエストを送れるようにしましょう。試しに、トップページに全ユーザの一覧を表示させつつ、新規ユーザの作成も可能にしてみましょう。

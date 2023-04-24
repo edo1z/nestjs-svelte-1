@@ -1,10 +1,15 @@
-<script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
+<script lang="ts">
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
 	import '@skeletonlabs/skeleton/styles/all.css';
-	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
+	import { AppBar } from '@skeletonlabs/skeleton';
 </script>
 
-<slot />
+<AppBar slotTrail="place-content-end">
+	<h2><a href="/">Nestjs-SvelteKit</a></h2>
+	<svelte:fragment slot="trail">(actions)</svelte:fragment>
+</AppBar>
+
+<main>
+	<slot />
+</main>

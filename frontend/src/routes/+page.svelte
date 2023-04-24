@@ -1,13 +1,15 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script lang="ts">
+	import LayoutDefault from '$lib/components/layouts/LayoutDefault.svelte';
+</script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5">
-		<h1>Let's get cracking bones!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code>/src/routes/+layout.svelte</code> - barebones layout, the CSS import order is critical!</li>
-			<li><code>/src/app.postcss</code> - minimal css to make the page full screen, may not be relevant for your project</li>
-			<li><code>/src/routes/+page.svelte</code> - this page, you can replace the contents</li>
-		</ul>
-	</div>
-</div>
+<LayoutDefault>
+	<h2 class="my-10">Menu</h2>
+	<ul>
+		<li><a href="/auth/sign-in">Sing In</a></li>
+		<li><a href="/auth/sign-up">Sing Up</a></li>
+	</ul>
+
+	<h2 class="my-10">All Users</h2>
+
+	<h2 class="my-10">Create New User</h2>
+</LayoutDefault>
